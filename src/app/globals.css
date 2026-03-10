@@ -1,25 +1,60 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
+  --background: #fdfcfc;
   --foreground: #171717;
+  --border: #e5e5e5;
+  --ring: #a1a1a1;
+  --card: #fff;
+  --input: #e5e5e5;
+  --muted-foreground: #737373;
+  --destructive: #e40014;
+
+  --brand-primary: #8481fa;
+  --brand-secondary: #38c9c8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #101010;
+    --foreground: #f3f5f7;
+    --border: #323232;
+    --ring: #737373;
+    --card: #171717;
+    --input: #ffffff26;
+    --muted-foreground: #a1a1a1;
+    --destructive: #ff6568;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-outfit);
-}
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-input: var(--input);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-destructive: var(--destructive);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-inter);
+
+  --background-image-brand-glow:
+    linear-gradient(20deg, var(--brand-primary), transparent 60%),
+    linear-gradient(-20deg, var(--brand-secondary), transparent 60%);
 }
 
 @layer base {
+  * {
+    @apply border-border;
+  }
+
   body {
     @apply bg-background font-sans text-foreground;
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    @apply cursor-pointer;
   }
 }
