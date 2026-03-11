@@ -84,6 +84,11 @@
 }
 
 @layer utilities {
+  .text-brand {
+    @apply bg-brand bg-clip-text text-transparent;
+    -webkit-background-clip: text;
+  }
+
   .custom-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: var(--color-accent) transparent;
