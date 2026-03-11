@@ -5,17 +5,15 @@ import Label from '@/components/ui/label'
 
 export default function SignupPage() {
   return (
-    <>
-      <Card title='Welcome to CodeLeap Network!'>
-        <form className='flex flex-col gap-4'>
-          <div className='flex flex-col gap-2.5'>
-            <Label>Please enter your username</Label>
-            <Input placeholder='elonmusk' />
-          </div>
+    <Card title='Welcome to CodeLeap Network!' className='animate-slide-up'>
+      <form className='flex flex-col gap-4'>
+        <div className='flex flex-col gap-2.5'>
+          <Label>Please enter your username</Label>
+          <Input placeholder='levyprado' />
+        </div>
 
-          <Button className='mt-2'>Enter</Button>
-        </form>
-      </Card>
-    </>
+        <Button className='mt-2'>Enter</Button>
+      </form>
+    </Card>
   )
 }
