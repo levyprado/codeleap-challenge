@@ -23,7 +23,7 @@ export default function CreatePostForm() {
         </div>
 
         <div className='flex items-center justify-between pt-2'>
-          <IconButton icon={ImageIcon} />
+          <IconButton icon={ImageIcon} aria-label='Attach Image' />
 
           <Button className='ml-auto px-8'>Create Post</Button>
         </div>
