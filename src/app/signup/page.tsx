@@ -1,4 +1,4 @@
-import AuthCard from '@/components/auth-card'
+import AuthCard from '@/features/auth/components/auth-card'
 import { type Metadata } from 'next'
 
 export const metadata: Metadata = {
