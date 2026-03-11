@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils'
 import { Button as ButtonPrimitive } from '@base-ui/react/button'
 import { type IconSvgElement } from '@hugeicons/react'
-import { Icon } from './icon'
+import Icon from './icon'
 
 export default function IconButton({
   className,

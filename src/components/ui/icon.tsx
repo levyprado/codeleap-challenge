@@ -3,7 +3,7 @@ import type { ComponentProps } from 'react'
 
 type IconProps = ComponentProps<typeof HugeiconsIcon>
 
-export function Icon({
+export default function Icon({
   size = 16,
   color = 'currentColor',
   strokeWidth = 2,

@@ -8,7 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from './ui/dropdown-menu'
-import { Icon } from './ui/icon'
+import Icon from './ui/icon'
 
 export default function UserMenu() {
   const username = 'levyprado'
