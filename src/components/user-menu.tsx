@@ -1,3 +1,6 @@
+'use client'
+
+import { useAuthStore } from '@/features/auth/auth-store'
 import { LogoutIcon, SunIcon } from '@hugeicons/core-free-icons'
 import {
   DropdownMenu,
@@ -11,8 +14,8 @@ import {
 import Icon from './ui/icon'
 
 export default function UserMenu() {
-  const username = 'levyprado'
-  const initial = username[0]
+  const { username, logout } = useAuthStore()
+  const initial = username?.[0]
 
   return (
     <DropdownMenu>
@@ -32,9 +35,9 @@ export default function UserMenu() {
             Toggle Theme
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem variant='destructive'>
+          <DropdownMenuItem onClick={logout} variant='destructive'>
             <Icon icon={LogoutIcon} />
-            Sign Out
+            Log Out
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>
