@@ -20,7 +20,7 @@ export default function PostItem({
   content,
   timeAgo,
 }: PostItemProps) {
-  const initial = username[0].toUpperCase()
+  const initial = username[0]
 
   return (
     <article className='flex shrink-0 flex-col overflow-hidden rounded-xl border bg-card shadow-sm shadow-accent/30 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md'>
@@ -38,7 +38,7 @@ export default function PostItem({
       <div className='flex flex-col gap-2 px-4 py-2.5'>
         <div className='flex items-center justify-between'>
           <div className='flex items-center gap-2.5'>
-            <div className='flex h-8 w-8 items-center justify-center rounded-full bg-accent/10 text-sm font-bold text-accent'>
+            <div className='flex size-8 items-center justify-center rounded-full bg-accent/10 text-sm font-bold text-accent uppercase'>
               {initial}
             </div>
             <span className='font-medium tracking-tight text-muted-foreground'>
