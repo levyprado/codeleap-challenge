@@ -1,7 +1,7 @@
 import Header from '@/components/header'
-import CreatePostForm from '@/components/post/create-post-form'
-import FeedControls from '@/components/post/feed-controls'
-import PostList from '@/components/post/post-list'
+import CreatePostForm from '@/features/post/components/create-post-form'
+import FeedControls from '@/features/post/components/feed-controls'
+import PostList from '@/features/post/components/post-list'
 
 export default function HomePage() {
   return (

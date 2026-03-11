@@ -1,9 +1,9 @@
+import Button from '@/components/ui/button'
+import IconButton from '@/components/ui/icon-button'
+import Input from '@/components/ui/input'
+import Label from '@/components/ui/label'
+import Textarea from '@/components/ui/textarea'
 import { ImageIcon } from '@hugeicons/core-free-icons'
-import Button from '../ui/button'
-import IconButton from '../ui/icon-button'
-import Input from '../ui/input'
-import Label from '../ui/label'
-import Textarea from '../ui/textarea'
 
 export default function CreatePostForm() {
   return (

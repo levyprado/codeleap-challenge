@@ -1,11 +1,11 @@
+import Icon from '@/components/ui/icon'
+import IconButton from '@/components/ui/icon-button'
 import {
   Comment03Icon,
   FavouriteIcon,
   MoreHorizontalIcon,
   Share01Icon,
 } from '@hugeicons/core-free-icons'
-import { Icon } from '../ui/icon'
-import IconButton from '../ui/icon-button'
 
 type PostItemProps = {
   title: string

@@ -1,11 +1,11 @@
+import Button from '@/components/ui/button'
+import Icon from '@/components/ui/icon'
+import Input from '@/components/ui/input'
 import {
   ArrowUpDownIcon,
   SearchIcon,
   SlidersHorizontalIcon,
 } from '@hugeicons/core-free-icons'
-import Button from '../ui/button'
-import { Icon } from '../ui/icon'
-import Input from '../ui/input'
 
 export default function FeedControls() {
   return (
