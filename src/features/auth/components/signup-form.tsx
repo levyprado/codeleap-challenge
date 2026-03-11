@@ -7,21 +7,23 @@ import Label from '@/components/ui/label'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Loading03Icon } from '@hugeicons/core-free-icons'
 import { useForm } from 'react-hook-form'
+import { useAuthStore } from '../auth-store'
 import { type SignupFormData, signupSchema } from '../types'
 
 export default function SignupForm() {
+  const { login } = useAuthStore()
+
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting, isValid },
   } = useForm<SignupFormData>({
     resolver: zodResolver(signupSchema),
-    mode: 'onTouched',
+    mode: 'onChange',
   })
 
-  const onSubmit = async (data: SignupFormData) => {
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-    console.log(data)
+  const onSubmit = (data: SignupFormData) => {
+    login(data.username)
   }
 
   return (
