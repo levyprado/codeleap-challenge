@@ -3,7 +3,7 @@ import UserMenu from './user-menu'
 
 export default function Header() {
   return (
-    <header className='flex h-16 items-center justify-between gap-3 bg-brand px-6'>
+    <header className='flex h-16 items-center justify-between gap-3 bg-brand px-6 md:px-8'>
       <h1 className='text-xl font-bold text-balance text-white md:text-2xl'>
         {siteConfig.name}
       </h1>
