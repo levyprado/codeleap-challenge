@@ -10,6 +10,7 @@
   --muted-foreground: #737373;
   --destructive: #e40014;
 
+  --accent: #7b94ea;
   --brand-primary: #8481fa;
   --brand-secondary: #38c9c8;
 }
@@ -37,11 +38,17 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-destructive: var(--destructive);
 
+  --color-accent: var(--accent);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+
   --font-sans: var(--font-inter);
 
   --background-image-brand-glow:
-    linear-gradient(20deg, var(--brand-primary), transparent 60%),
-    linear-gradient(-20deg, var(--brand-secondary), transparent 60%);
+    linear-gradient(25deg, var(--brand-primary), transparent 80%),
+    linear-gradient(-25deg, var(--brand-secondary), transparent 80%);
+
+  --background-image-brand: linear-gradient(45deg, #8481fa, #38c9c8);
 }
 
 @layer base {
