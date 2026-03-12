@@ -1,5 +1,6 @@
 import { Delete02Icon, PencilEdit02Icon } from '@hugeicons/core-free-icons'
 import { Post } from '../types'
+import DeletePostForm from './delete-post-form'
 import EditPostForm from './edit-post-form'
 import PostActionDialog from './post-action-dialog'
 
@@ -23,7 +24,7 @@ export default function PostActions({ post }: PostActionsProps) {
         triggerLabel='Delete post'
         title='Are you sure you want to delete this item?'
       >
-        <p>Delete Post Form</p>
+        <DeletePostForm postId={post.id} />
       </PostActionDialog>
     </div>
   )
