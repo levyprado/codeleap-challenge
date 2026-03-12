@@ -21,7 +21,7 @@ export default function CreatePostForm() {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting, isValid },
+    formState: { errors, isValid },
   } = useForm<CreatePostFormData>({
     resolver: zodResolver(createPostSchema),
     mode: 'onChange',
@@ -68,10 +68,10 @@ export default function CreatePostForm() {
 
           <Button
             type='submit'
-            disabled={isSubmitting || !isValid}
+            disabled={createPostMutation.isPending || !isValid}
             className='ml-auto px-8'
           >
-            {isSubmitting ? (
+            {createPostMutation.isPending ? (
               <>
                 <Icon icon={Loading03Icon} size={20} className='animate-spin' />
                 Creating...
