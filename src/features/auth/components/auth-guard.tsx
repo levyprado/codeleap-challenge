@@ -10,7 +10,6 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
 
   useEffect(() => {
-    console.log(username)
     const isAuthenticated = !!username
     const isSignupPage = pathname === '/signup'
 
