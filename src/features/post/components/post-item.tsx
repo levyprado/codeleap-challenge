@@ -1,5 +1,6 @@
 import Icon from '@/components/ui/icon'
 import IconButton from '@/components/ui/icon-button'
+import { formatPostDate } from '@/lib/utils'
 import {
   Comment03Icon,
   FavouriteIcon,
@@ -39,7 +40,7 @@ export default function PostItem({ post }: PostItemProps) {
             </span>
           </div>
           <span className='text-sm font-medium text-muted-foreground'>
-            {post.created_datetime}
+            {formatPostDate(post.created_datetime)}
           </span>
         </div>
 
