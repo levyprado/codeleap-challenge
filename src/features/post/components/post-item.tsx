@@ -3,8 +3,9 @@ import IconButton from '@/components/ui/icon-button'
 import { formatPostDate } from '@/lib/utils'
 import {
   Comment03Icon,
+  Delete02Icon,
   FavouriteIcon,
-  MoreHorizontalIcon,
+  PencilEdit02Icon,
   Share01Icon,
 } from '@hugeicons/core-free-icons'
 import { Post } from '../types'
@@ -18,13 +19,22 @@ export default function PostItem({ post }: PostItemProps) {
 
   return (
     <article className='flex shrink-0 animate-slide-up flex-col overflow-hidden rounded-xl border bg-card shadow-sm shadow-accent/30 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md'>
-      <div className='flex items-center justify-between bg-accent px-4 py-3'>
+      <div className='flex items-center justify-between gap-1 bg-accent px-4 py-3'>
         <h3 className='leading-tight font-medium tracking-wide text-white md:text-lg'>
           {post.title}
         </h3>
-        <div className='flex shrink-0 items-center gap-3'>
-          <button className='rounded-md p-1.5 text-white transition-colors hover:bg-white/10'>
-            <Icon icon={MoreHorizontalIcon} />
+        <div className='flex shrink-0 items-center gap-2'>
+          <button
+            aria-label='Edit post'
+            className='rounded-lg p-1.5 text-white transition-colors hover:bg-white/10 md:p-2'
+          >
+            <Icon icon={PencilEdit02Icon} className='md:size-5' />
+          </button>
+          <button
+            aria-label='Delete post'
+            className='rounded-lg p-1.5 text-white transition-colors hover:bg-white/10 md:p-2'
+          >
+            <Icon icon={Delete02Icon} className='md:size-5' />
           </button>
         </div>
       </div>
