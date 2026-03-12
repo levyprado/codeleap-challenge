@@ -2,6 +2,7 @@ import Header from '@/components/header'
 import CreatePostForm from '@/features/post/components/create-post-form'
 import FeedControls from '@/features/post/components/feed-controls'
 import PostList from '@/features/post/components/post-list'
+import { Suspense } from 'react'
 
 export default function HomePage() {
   return (
@@ -15,7 +16,11 @@ export default function HomePage() {
 
         <FeedControls />
 
-        <PostList />
+        <Suspense
+          fallback={<div className='text-3xl font-bold'>Loading...</div>}
+        >
+          <PostList />
+        </Suspense>
       </div>
     </div>
   )
