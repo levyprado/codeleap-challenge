@@ -1,14 +1,15 @@
-import Icon from '@/components/ui/icon'
+'use client'
+
 import IconButton from '@/components/ui/icon-button'
+import { useAuthStore } from '@/features/auth/auth-store'
 import { formatPostDate } from '@/lib/utils'
 import {
   Comment03Icon,
-  Delete02Icon,
   FavouriteIcon,
-  PencilEdit02Icon,
   Share01Icon,
 } from '@hugeicons/core-free-icons'
 import { Post } from '../types'
+import PostActions from './post-actions'
 
 type PostItemProps = {
   post: Post
@@ -17,26 +18,17 @@ type PostItemProps = {
 export default function PostItem({ post }: PostItemProps) {
   const initial = post.username[0]
 
+  const { username } = useAuthStore()
+  const isOwner = username === post.username
+
   return (
     <article className='flex shrink-0 animate-slide-up flex-col overflow-hidden rounded-xl border bg-card shadow-sm shadow-accent/30 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md'>
-      <div className='flex items-center justify-between gap-1 bg-accent px-4 py-3'>
+      <div className='flex h-12 items-center justify-between gap-1 bg-accent px-4 md:h-14'>
         <h3 className='leading-tight font-medium tracking-wide text-white md:text-lg'>
           {post.title}
         </h3>
-        <div className='flex shrink-0 items-center gap-2'>
-          <button
-            aria-label='Edit post'
-            className='rounded-lg p-1.5 text-white transition-colors hover:bg-white/10 md:p-2'
-          >
-            <Icon icon={PencilEdit02Icon} className='md:size-5' />
-          </button>
-          <button
-            aria-label='Delete post'
-            className='rounded-lg p-1.5 text-white transition-colors hover:bg-white/10 md:p-2'
-          >
-            <Icon icon={Delete02Icon} className='md:size-5' />
-          </button>
-        </div>
+
+        {isOwner && <PostActions />}
       </div>
 
       <div className='flex flex-col gap-2 px-4 py-2.5'>
