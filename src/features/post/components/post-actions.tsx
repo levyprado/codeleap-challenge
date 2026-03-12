@@ -1,7 +1,13 @@
 import { Delete02Icon, PencilEdit02Icon } from '@hugeicons/core-free-icons'
+import { Post } from '../types'
+import EditPostForm from './edit-post-form'
 import PostActionDialog from './post-action-dialog'
 
-export default function PostActions() {
+type PostActionsProps = {
+  post: Post
+}
+
+export default function PostActions({ post }: PostActionsProps) {
   return (
     <div className='flex shrink-0 items-center gap-2'>
       <PostActionDialog
@@ -9,7 +15,7 @@ export default function PostActions() {
         triggerLabel='Edit post'
         title='Edit item'
       >
-        <p>Edit Post Form</p>
+        <EditPostForm post={post} />
       </PostActionDialog>
 
       <PostActionDialog
