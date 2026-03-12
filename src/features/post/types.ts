@@ -20,3 +20,5 @@ export const createPostSchema = z.object({
 })
 
 export type CreatePostFormData = z.infer<typeof createPostSchema>
+
+export type CreatePostPayload = CreatePostFormData & { username: string }
