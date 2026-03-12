@@ -10,11 +10,12 @@ import { useAuthStore } from '@/features/auth/auth-store'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ImageIcon, Loading03Icon } from '@hugeicons/core-free-icons'
 import { useForm } from 'react-hook-form'
-import { postsApi } from '../api'
+import { useCreatePost } from '../mutations'
 import { CreatePostFormData, createPostSchema } from '../types'
 
 export default function CreatePostForm() {
   const { username } = useAuthStore()
+  const createPostMutation = useCreatePost()
 
   const {
     register,
@@ -28,8 +29,9 @@ export default function CreatePostForm() {
 
   const onSubmit = async (data: CreatePostFormData) => {
     if (!username) return
+
     try {
-      await postsApi.createPost({ ...data, username })
+      await createPostMutation.mutateAsync({ ...data, username })
       reset()
     } catch (error) {
       console.error(error)
