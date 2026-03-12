@@ -6,27 +6,20 @@ import {
   MoreHorizontalIcon,
   Share01Icon,
 } from '@hugeicons/core-free-icons'
+import { Post } from '../types'
 
 type PostItemProps = {
-  title: string
-  username: string
-  content: string
-  timeAgo: string
+  post: Post
 }
 
-export default function PostItem({
-  title,
-  username,
-  content,
-  timeAgo,
-}: PostItemProps) {
-  const initial = username[0]
+export default function PostItem({ post }: PostItemProps) {
+  const initial = post.username[0]
 
   return (
     <article className='flex shrink-0 animate-slide-up flex-col overflow-hidden rounded-xl border bg-card shadow-sm shadow-accent/30 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md'>
       <div className='flex items-center justify-between bg-accent px-4 py-3'>
         <h3 className='leading-tight font-medium tracking-wide text-white md:text-lg'>
-          {title}
+          {post.title}
         </h3>
         <div className='flex shrink-0 items-center gap-3'>
           <button className='rounded-md p-1.5 text-white transition-colors hover:bg-white/10'>
@@ -42,16 +35,16 @@ export default function PostItem({
               {initial}
             </div>
             <span className='font-medium tracking-tight text-muted-foreground'>
-              {username}
+              {post.username}
             </span>
           </div>
           <span className='text-sm font-medium text-muted-foreground'>
-            {timeAgo}
+            {post.created_datetime}
           </span>
         </div>
 
         <p className='leading-relaxed wrap-break-word whitespace-pre-wrap'>
-          {content}
+          {post.content}
         </p>
 
         <div className='mt-auto flex items-center gap-2 border-t border-border/40 pt-2'>
