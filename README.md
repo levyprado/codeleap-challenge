@@ -4,7 +4,9 @@ A social networking app built as a frontend challenge for [CodeLeap](https://cod
 
 **Live demo:** https://codeleap-network-snowy.vercel.app/
 
-![App mobile showcase](https://github.com/user-attachments/assets/d783045d-3bf7-48e9-8f3e-9428f2747699)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d783045d-3bf7-48e9-8f3e-9428f2747699" width="320" alt="App mobile showcase">
+</p>
 
 | Light Theme Signup                    | Dark Theme Signup                 |
 | ----------------------------------- | ----------------------------------- |
