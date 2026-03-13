@@ -1,7 +1,15 @@
 'use client'
 
 import { useAuthStore } from '@/features/auth/auth-store'
-import { LogoutIcon, SunIcon } from '@hugeicons/core-free-icons'
+import { Theme, useThemeStore } from '@/lib/theme-store'
+import { cn } from '@/lib/utils'
+import {
+  ComputerPhoneSyncIcon,
+  LogoutIcon,
+  Moon02Icon,
+  SunIcon,
+} from '@hugeicons/core-free-icons'
+import type { IconSvgElement } from '@hugeicons/react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,7 +21,14 @@ import {
 } from './ui/dropdown-menu'
 import Icon from './ui/icon'
 
+const themes: { value: Theme; label: string; icon: IconSvgElement }[] = [
+  { value: 'light', label: 'Light', icon: SunIcon },
+  { value: 'dark', label: 'Dark', icon: Moon02Icon },
+  { value: 'system', label: 'System', icon: ComputerPhoneSyncIcon },
+]
+
 export default function UserMenu() {
+  const { theme, setTheme } = useThemeStore()
   const { username, logout } = useAuthStore()
   const initial = username?.[0]
 
@@ -30,10 +45,18 @@ export default function UserMenu() {
           <DropdownMenuLabel className='pointer-events-none ml-0.5 text-accent'>
             @{username}
           </DropdownMenuLabel>
-          <DropdownMenuItem>
-            <Icon icon={SunIcon} />
-            Toggle Theme
-          </DropdownMenuItem>
+
+          {themes.map(({ value, label, icon }) => (
+            <DropdownMenuItem
+              key={value}
+              onClick={() => setTheme(value)}
+              className={cn(theme === value && 'text-accent')}
+            >
+              <Icon icon={icon} />
+              {label}
+            </DropdownMenuItem>
+          ))}
+
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={logout} variant='destructive'>
             <Icon icon={LogoutIcon} />
