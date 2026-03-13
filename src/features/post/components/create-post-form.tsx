@@ -1,7 +1,7 @@
 'use client'
 
-import FormField from '@/components/form-field'
 import Button from '@/components/ui/button'
+import FormField from '@/components/ui/form-field'
 import Icon from '@/components/ui/icon'
 import Input from '@/components/ui/input'
 import Textarea from '@/components/ui/textarea'
