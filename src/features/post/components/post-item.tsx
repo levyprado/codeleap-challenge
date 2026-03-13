@@ -51,12 +51,12 @@ export default function PostItem({ post }: PostItemProps) {
         </p>
 
         <div className='mt-auto flex items-center gap-2 border-t border-border/40 pt-2'>
-          <IconButton icon={FavouriteIcon} label='24' aria-label='Like' />
+          <IconButton icon={FavouriteIcon} label='0' aria-label='Like' />
           <IconButton icon={Comment03Icon} label='Comment' />
           <IconButton
             icon={Share01Icon}
-            className='ml-auto'
             aria-label='Share'
+            className='ml-auto'
           />
         </div>
       </div>
