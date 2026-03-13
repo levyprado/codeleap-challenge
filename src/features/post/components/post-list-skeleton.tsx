@@ -1,5 +1,6 @@
 import Icon from '@/components/ui/icon'
 import IconButton from '@/components/ui/icon-button'
+import { POSTS_LIMIT } from '@/lib/constants'
 import {
   Comment03Icon,
   Delete02Icon,
@@ -8,10 +9,20 @@ import {
   Share01Icon,
 } from '@hugeicons/core-free-icons'
 
-function PostItemSkeleton() {
+export default function PostListSkeleton() {
+  return (
+    <div className='custom-scrollbar flex min-h-0 flex-1 flex-col gap-6 overflow-y-auto px-4 py-6 md:px-8'>
+      {[...Array(POSTS_LIMIT).keys()].map((i) => (
+        <PostItemSkeleton key={i} />
+      ))}
+    </div>
+  )
+}
+
+export function PostItemSkeleton() {
   return (
     <div className='flex shrink-0 flex-col overflow-hidden rounded-xl border bg-card shadow-sm shadow-accent/30'>
-      <div className='flex h-13 items-center justify-between bg-accent px-4 py-3 md:px-6'>
+      <div className='flex h-13 items-center justify-between bg-accent px-4 py-3 md:h-14 md:px-6'>
         <div />
 
         <div className='flex shrink-0 items-center gap-6 text-white'>
@@ -58,16 +69,6 @@ function PostItemSkeleton() {
           />
         </div>
       </div>
-    </div>
-  )
-}
-
-export default function PostListSkeleton() {
-  return (
-    <div className='custom-scrollbar flex min-h-0 flex-1 flex-col gap-6 overflow-y-auto px-4 py-6 md:px-8'>
-      {[...Array(3).keys()].map((i) => (
-        <PostItemSkeleton key={i} />
-      ))}
     </div>
   )
 }
