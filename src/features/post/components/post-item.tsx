@@ -1,25 +1,20 @@
 'use client'
 
-import IconButton from '@/components/ui/icon-button'
 import { useAuthStore } from '@/features/auth/auth-store'
 import { formatPostDate } from '@/lib/utils'
-import {
-  Comment03Icon,
-  FavouriteIcon,
-  Share01Icon,
-} from '@hugeicons/core-free-icons'
 import { Post } from '../types'
 import PostActions from './post-actions'
+import PostInteractions from './post-interactions'
 
 type PostItemProps = {
   post: Post
 }
 
 export default function PostItem({ post }: PostItemProps) {
-  const initial = post.username[0]
-
   const { username } = useAuthStore()
   const isOwner = username === post.username
+
+  const initial = post.username[0]
 
   return (
     <article className='flex shrink-0 animate-slide-up flex-col overflow-hidden rounded-xl border bg-card shadow-sm shadow-accent/30 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md'>
@@ -50,15 +45,7 @@ export default function PostItem({ post }: PostItemProps) {
           {post.content}
         </p>
 
-        <div className='mt-auto flex items-center gap-2 border-t border-border/40 pt-2'>
-          <IconButton icon={FavouriteIcon} label='0' aria-label='Like' />
-          <IconButton icon={Comment03Icon} label='Comment' />
-          <IconButton
-            icon={Share01Icon}
-            aria-label='Share'
-            className='ml-auto'
-          />
-        </div>
+        <PostInteractions />
       </div>
     </article>
   )
