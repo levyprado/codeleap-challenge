@@ -15,17 +15,17 @@
   --brand-secondary: #38c9c8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #101010;
-    --foreground: #f3f5f7;
-    --border: #323232;
-    --ring: #737373;
-    --card: #171717;
-    --input: #ffffff26;
-    --muted-foreground: #a1a1a1;
-    --destructive: #ff6568;
-  }
+.dark {
+  --background: #101010;
+  --foreground: #f3f5f7;
+  --border: #323232;
+  --ring: #737373;
+  --card: #171717;
+  --input: #ffffff26;
+  --muted-foreground: #a1a1a1;
+  --destructive: #ff6568;
+
+  color-scheme: dark;
 }
 
 @theme inline {
