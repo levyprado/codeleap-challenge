@@ -22,7 +22,7 @@ export default function PostListSkeleton() {
 export function PostItemSkeleton() {
   return (
     <div className='flex shrink-0 flex-col overflow-hidden rounded-xl border bg-card shadow-sm shadow-accent/30'>
-      <div className='flex h-13 items-center justify-between bg-accent px-4 py-3 md:h-14 md:px-6'>
+      <div className='flex h-13 items-center justify-between bg-accent px-4 py-3 md:h-16 md:px-6'>
         <div />
 
         <div className='flex shrink-0 items-center gap-6 text-white'>

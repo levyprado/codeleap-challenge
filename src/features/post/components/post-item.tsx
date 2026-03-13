@@ -18,7 +18,7 @@ export default function PostItem({ post }: PostItemProps) {
 
   return (
     <article className='flex shrink-0 flex-col overflow-hidden rounded-xl border bg-card shadow-sm shadow-accent/30 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md'>
-      <div className='flex min-h-12 items-center justify-between gap-1 bg-accent px-4 py-2 md:min-h-14'>
+      <div className='flex min-h-12 items-center justify-between gap-1 bg-accent px-4 py-2.5 md:min-h-16 md:gap-3'>
         <h3 className='leading-tight font-medium tracking-wide text-white md:text-lg'>
           {post.title}
         </h3>
