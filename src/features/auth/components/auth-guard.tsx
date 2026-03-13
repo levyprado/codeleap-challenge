@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname, useRouter } from 'next/navigation'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useAuthStore } from '../auth-store'
 
 export default function AuthGuard({ children }: { children: React.ReactNode }) {
@@ -9,18 +9,25 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
   const router = useRouter()
   const pathname = usePathname()
 
+  const [isChecking, setIsChecking] = useState(true)
+
   useEffect(() => {
     const isAuthenticated = !!username
     const isSignupPage = pathname === '/signup'
 
     if (!isAuthenticated && !isSignupPage) {
       router.replace('/signup')
+    } else if (isAuthenticated && isSignupPage) {
+      router.replace('/')
+    } else {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setIsChecking(false)
     }
 
-    if (isAuthenticated && isSignupPage) {
-      router.replace('/')
-    }
+    return () => setIsChecking(true)
   }, [pathname, router, username])
+
+  if (isChecking) return null
 
   return <>{children}</>
 }
